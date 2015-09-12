@@ -19,5 +19,7 @@ module.exports = {
   status: {
     colors: true
   },
-  devtool: "source-map"
+  devtool: "source-map",
+  watch: true,
+  keepalive: true
 };
