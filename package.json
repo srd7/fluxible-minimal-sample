@@ -4,7 +4,7 @@
   "description": "fluxible minimum sample",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "./node_modules/gulp/bin/gulp.js dev"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,22 @@
   "bugs": {
     "url": "https://github.com/srd7/fluxible-minimum-sample/issues"
   },
-  "homepage": "https://github.com/srd7/fluxible-minimum-sample#readme"
+  "homepage": "https://github.com/srd7/fluxible-minimum-sample#readme",
+  "dependencies": {
+    "app-module-path": "^1.0.4",
+    "babel": "^5.8.23",
+    "babel-core": "^5.8.24",
+    "babel-loader": "^5.3.2",
+    "express": "^4.13.3",
+    "fluxible": "^0.5.2",
+    "fluxible-addons-react": "^0.1.8",
+    "fluxible-router": "^0.2.4",
+    "gulp": "^3.9.0",
+    "gulp-nodemon": "^2.0.4",
+    "react": "^0.13.3",
+    "rimraf": "^2.4.3",
+    "serialize-javascript": "^1.1.2",
+    "webpack": "^1.12.1",
+    "webpack-stream": "^2.1.0"
+  }
 }

@@ -1,0 +1,29 @@
+# デフォルトではすべてオフなので、推奨設定を上書きするスタイルでいく
+extends: "eslint:recommended"
+rules:
+  # インデントを2で固定
+  indent: [2, 2]
+  # ダブルクオーテーションに固定
+  quotes: [2, "double"]
+  # 改行は LF
+  linebreak-style: [2, "unix"]
+  # 常にセミコロンを求める
+  semi: [2, "always"]
+  # 未使用の変数は warning
+  no-unused-vars: 1
+  # 宣言してない変数の使用禁止
+  no-undef: 2
+  # console.log は warning
+  no-console: 1
+  # 比較は === を使う
+  eqeqeq: 2
+env:
+  es6: true
+  node: true
+  browser: true
+ecmaFeatures:
+  jsx: true
+  experimentalObjectRestSpread: true
+  # import を使う
+  modules: true
+plugins: ["react"]
