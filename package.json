@@ -1,0 +1,19 @@
+{
+  "name": "fluxible-minimum-sample",
+  "version": "1.0.0",
+  "description": "fluxible minimum sample",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srd7/fluxible-minimum-sample.git"
+  },
+  "author": "srd7",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/srd7/fluxible-minimum-sample/issues"
+  },
+  "homepage": "https://github.com/srd7/fluxible-minimum-sample#readme"
+}
