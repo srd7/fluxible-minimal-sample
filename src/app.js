@@ -9,13 +9,11 @@ import Application from "src/components/Application";
 import RouteStore from "src/stores/RouteStore";
 // ページのタイトル(や、その他アプリ全体に関わりそうなもの)が格納される Store
 import ApplicationStore from "src/stores/ApplicationStore";
-// Home の input 情報を登録する Store
-import HomeStore from "src/stores/HomeStore";
 
 // Fluxible フレームワークをインスタンス化
 const app = new Fluxible({
   component: Application,
-  stores: [RouteStore, ApplicationStore, HomeStore]
+  stores: [RouteStore, ApplicationStore]
 });
 
 export default app;

@@ -10,7 +10,7 @@ export default class Html extends React.Component {
     // markup : レンダリングされた HTML
     // context: Store を取得(して、ページタイトルを取得)するために必要
     const { state, markup, context } = this.props;
-    const title = context.getStore(ApplicationStore).getPageTitle();
+    const title = decodeURI(context.getStore(ApplicationStore).getPageTitle());
     return (
       <html>
         <head>

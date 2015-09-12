@@ -1,8 +1,5 @@
 import React, { PropTypes } from "react";
-import { connectToStores } from "fluxible-addons-react";
 import { navigateAction } from "fluxible-router";
-import HomeAction from "src/actions/HomeAction";
-import HomeStore from "src/stores/HomeStore";
 
 class Home extends React.Component {
   constructor(props, context) {
@@ -13,11 +10,12 @@ class Home extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleKeyDown     = this.handleKeyDown.bind(this);
     this.handleButtonClick = this.handleButtonClick.bind(this);
+
+    this.state = { inputValue: "" };
   }
 
   render() {
-    // 下で HomeStore から取得したもの
-    const { inputValue } = this.props;
+    const { inputValue } = this.state;
     return (
       <div>
         <p>コードを入力してユーザーページに飛ぼう</p>
@@ -37,9 +35,7 @@ class Home extends React.Component {
 
   handleInputChange(event) {
     // input の変更アクションを実行。
-    // それにより HomeAction -> dispatcher -> HomeStore と情報が伝達され、
-    // 最終的に input の内容が更新される。
-    this.context.executeAction(HomeAction.setInputValue, { inputValue: event.target.value });
+    this.setState({ inputValue: event.target.value });
   }
 
   handleKeyDown(event) {
@@ -50,7 +46,7 @@ class Home extends React.Component {
 
   handleButtonClick() {
     // ボタンが押されたら MyPage にジャンプする。
-    const { inputValue } = this.props;
+    const { inputValue } = this.state;
     const userCode = inputValue.trim() || "hoge"; // 空文字はダメなので、デフォルト値として。
     // ちなみに Store は、名前からでも取得できる
     const routeStore = this.context.getStore("RouteStore");
@@ -62,17 +58,10 @@ class Home extends React.Component {
 }
 
 // executeAction と getStore を使用できるようにセットする。
-// これをしないと this.context.executeAction および this.context.getStore は undefined になる。
+// これをしないと this.context.executeAction および getStore は undefined になる。
 Home.contextTypes = {
   executeAction: PropTypes.func.isRequired,
   getStore     : PropTypes.func.isRequired
 };
 
-// Home を HomeStore に接続させる
-// その内容を this.props から取得できるようにする
-export default connectToStores(Home, [HomeStore], (context) => {
-  const homeStore = context.getStore(HomeStore);
-  return {
-    inputValue: homeStore.getInputValue()
-  };
-});
+export default Home;
