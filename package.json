@@ -1,21 +1,21 @@
 {
-  "name": "fluxible-minimum-sample",
+  "name": "fluxible-minimal-sample",
   "version": "1.0.0",
-  "description": "fluxible minimum sample",
+  "description": "fluxible minimal sample",
   "main": "index.js",
   "scripts": {
     "dev": "./node_modules/gulp/bin/gulp.js dev"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/srd7/fluxible-minimum-sample.git"
+    "url": "git+https://github.com/srd7/fluxible-minimal-sample.git"
   },
   "author": "srd7",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/srd7/fluxible-minimum-sample/issues"
+    "url": "https://github.com/srd7/fluxible-minimal-sample/issues"
   },
-  "homepage": "https://github.com/srd7/fluxible-minimum-sample#readme",
+  "homepage": "https://github.com/srd7/fluxible-minimal-sample#readme",
   "dependencies": {
     "app-module-path": "^1.0.4",
     "babel": "^5.8.23",
